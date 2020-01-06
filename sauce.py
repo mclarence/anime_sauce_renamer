@@ -10,7 +10,7 @@ class Sauce:
         self.apiKey = apiKey
         self.logger = logging.getLogger(__name__)
         self.saucenao = SauceNao(directory=workingDirectory, output_type=SauceNao.API_JSON_TYPE,
-                        api_key=apiKey)
+                        api_key=apiKey, minimum_similarity=similarity)
         self.startTime = 0
         self.requestCount = 0
         self.similarity = similarity
@@ -40,7 +40,7 @@ class Sauce:
             if float(result['header']['similarity']) >= self.similarity:
                 resultData = result['data'].keys()
                 if 'material' in resultData:
-                    sauceResult.material = result['data']['material']
+                    sauceResult.material = result['data']['material'].split(",")
                 if 'characters' in resultData:
                     sauceResult.characters = result['data']['characters'].split(",")
                 if 'pixiv_id' in resultData:

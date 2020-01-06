@@ -19,7 +19,7 @@ class File_Renamer:
                     else:
                         continue
                 elif attr == 'material':
-                    fn_strings.append(value)
+                    fn_strings.append(value[0])
                 elif attr == 'characters':
                     if fn_strings[0] is not None:
                         if fn_strings[0] in value or fn_strings[0] is not "":
@@ -95,11 +95,14 @@ class File_Renamer:
             ext = ".png"
         newFileName = slugify("_".join(fn_strings))
 
-        if os.path.isfile(os.path.join(self.workingDirectory, newFileName)):
+        if os.path.isfile(os.path.join(self.workingDirectory, newFileName + ext)):
             count = 1
-            while os.path.isfile(os.path.join(self.workingDirectory, newFileName)):
-                newFileName = newFileName + "_" + str(count)
+            tempFileName = newFileName
+            while os.path.isfile(os.path.join(self.workingDirectory, tempFileName + ext)):
+                tempFileName = newFileName + "_" + str(count)
                 count = count + 1
+            newFileName = tempFileName
+
         try:
             shutil.move(os.path.join(self.workingDirectory, filename), os.path.join(self.workingDirectory, newFileName + ext))
         except OSError as error:

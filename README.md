@@ -35,14 +35,24 @@ Place all images you want to rename in a folder. Rename all images so that they 
 * `unclassified_2.png`
 * `unclassifiedImg1.jpg`
 
-PNG and JPG are supported only.
+PNG and JPG (and JPEG) image files are supported only.
 
-```python
-python main.py <directory>
-```
-* `directory` - The directory of images to be renamed.
+Then run: `python main.py /path/to/directory` to start checking and renaming.
+
+If you just want to rename one single file (naming it to start with "unclassified" is not required), type the following: `python main.py /path/to/image.png`
 
 Unknown images will be renamed to "unknown.jpg/.png"
+
+```shell
+usage: main.py [-h] [--verbose] fileOrDirectory
+
+positional arguments:
+  fileOrDirectory  The file or directory to rename image(s).
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --verbose        Increase output verbosity.
+```
 
 ## Known Issues
 * The SauceNao API is limited to 200 searches per day, per api key, per ip address for free users. Hence 200 images can only be renamed per day. You are able to do more searches by purchasing a required amount on the SauceNao website or if you don't want to pay anything you can use a VPN with a new API key by signing up again on the website.
