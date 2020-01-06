@@ -1,4 +1,4 @@
-# Anime Sauce Renamer
+# Anime Image Sauce Renamer
 
 Anime Sauce Renamer is a python script which renames files based on their source obtained from [SauceNao](https://saucenao.com/). The new file name will include either material, characters, pixiv id, gelbooru id and so on.
 
