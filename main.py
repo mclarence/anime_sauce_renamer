@@ -106,9 +106,10 @@ if os.path.exists(fileOrDirectory):
             logging.info("Done! ヽ(*⌒▽⌒*)ﾉ")
             exit(1)
 
+        logging.info("I will now be checking and renaming " + str(unclassifiedFileCount) + " file(s) :)")
         for filename in filesToRename:
             if filename.startswith("unclassified"):
-                logging.info("I will now be checking and renaming " + str(unclassifiedFileCount) + " file(s) :)")
+
                 if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
                     while True:
                         try:

@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3cbea1d-331f-4a21-81b2-e85e73dea577" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/Results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/IqdbService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ServicesEnum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_renamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_renamer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultData.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sauce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SauceNaoService.py" afterDir="false" />
-    </list>
+    <list default="true" id="b3cbea1d-331f-4a21-81b2-e85e73dea577" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +100,7 @@
       <workItem from="1578307819678" duration="338000" />
       <workItem from="1578308190838" duration="6629000" />
       <workItem from="1578347159960" duration="7425000" />
-      <workItem from="1578355149566" duration="4404000" />
+      <workItem from="1578355149566" duration="4527000" />
     </task>
     <task id="LOCAL-00001" summary="- Fixed duplicate file bug.&#10;- JPEG files are now recognised.&#10;- Can now rename only single file.&#10;- Improved logging output.&#10;- Updated README.md&#10;- Added configuration error checking.&#10;- --verbosity command line argument added">
       <created>1578315516394</created>
@@ -120,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578315516394</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- Add IQDB Service&#10;- Enable auto lookup between both services.&#10;- Enable user to select specific services.&#10;- Bug fixes">
+      <created>1578359768403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578359768403</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Fixed duplicate file bug.&#10;- JPEG files are now recognised.&#10;- Can now rename only single file.&#10;- Improved logging output.&#10;- Updated README.md&#10;- Added configuration error checking.&#10;- --verbosity command line argument added" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed duplicate file bug.&#10;- JPEG files are now recognised.&#10;- Can now rename only single file.&#10;- Improved logging output.&#10;- Updated README.md&#10;- Added configuration error checking.&#10;- --verbosity command line argument added" />
+    <MESSAGE value="- Add IQDB Service&#10;- Enable auto lookup between both services.&#10;- Enable user to select specific services.&#10;- Bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Add IQDB Service&#10;- Enable auto lookup between both services.&#10;- Enable user to select specific services.&#10;- Bug fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2085" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578271891473">
@@ -159,10 +156,10 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="1765" y="311" key="#xdebugger.XInspectDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578189843216" />
-    <state x="2009" y="67" key="CommitChangelistDialog2" timestamp="1578315516210">
+    <state x="2009" y="23" key="CommitChangelistDialog2" timestamp="1578359768191">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state x="2009" y="67" key="CommitChangelistDialog2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315516210" />
+    <state x="2009" y="23" key="CommitChangelistDialog2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359768191" />
     <state width="838" height="466" key="DebuggerActiveHint" timestamp="1578196234655">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
@@ -171,46 +168,46 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2188" y="312" key="FileChooserDialogImpl/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578189045526" />
-    <state width="1878" height="371" key="GridCell.Tab.0.bottom" timestamp="1578359388901">
+    <state width="1878" height="371" key="GridCell.Tab.0.bottom" timestamp="1578359782137">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388901" />
-    <state width="1878" height="371" key="GridCell.Tab.0.center" timestamp="1578359388900">
+    <state width="1878" height="371" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782137" />
+    <state width="1878" height="371" key="GridCell.Tab.0.center" timestamp="1578359782136">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388900" />
-    <state width="1878" height="371" key="GridCell.Tab.0.left" timestamp="1578359388899">
+    <state width="1878" height="371" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782136" />
+    <state width="1878" height="371" key="GridCell.Tab.0.left" timestamp="1578359782134">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388899" />
-    <state width="1878" height="371" key="GridCell.Tab.0.right" timestamp="1578359388901">
+    <state width="1878" height="371" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782134" />
+    <state width="1878" height="371" key="GridCell.Tab.0.right" timestamp="1578359782136">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388900" />
-    <state width="1878" height="371" key="GridCell.Tab.1.bottom" timestamp="1578359388904">
+    <state width="1878" height="371" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782136" />
+    <state width="1878" height="371" key="GridCell.Tab.1.bottom" timestamp="1578359782138">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388904" />
-    <state width="1878" height="371" key="GridCell.Tab.1.center" timestamp="1578359388902">
+    <state width="1878" height="371" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782138" />
+    <state width="1878" height="371" key="GridCell.Tab.1.center" timestamp="1578359782137">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388902" />
-    <state width="1878" height="371" key="GridCell.Tab.1.left" timestamp="1578359388902">
+    <state width="1878" height="371" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782137" />
+    <state width="1878" height="371" key="GridCell.Tab.1.left" timestamp="1578359782137">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388902" />
-    <state width="1878" height="371" key="GridCell.Tab.1.right" timestamp="1578359388903">
+    <state width="1878" height="371" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782137" />
+    <state width="1878" height="371" key="GridCell.Tab.1.right" timestamp="1578359782138">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="371" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388903" />
+    <state width="1878" height="371" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359782138" />
     <state x="2187" y="109" key="SettingsEditor" timestamp="1578350153274">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2187" y="109" key="SettingsEditor/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578350153274" />
-    <state x="2000" y="287" key="Vcs.Push.Dialog.v2" timestamp="1578315520141">
+    <state x="2000" y="287" key="Vcs.Push.Dialog.v2" timestamp="1578359771281">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state x="2000" y="287" key="Vcs.Push.Dialog.v2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315520141" />
+    <state x="2000" y="287" key="Vcs.Push.Dialog.v2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359771281" />
     <state width="960" height="528" key="XDebugger.FullValuePopup" timestamp="1578272911318">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
