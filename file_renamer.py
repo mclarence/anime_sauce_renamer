@@ -146,6 +146,8 @@ class File_Renamer:
                 count = count + 1
             newFileName = tempFileName
 
+        if newFileName.startswith("_"):
+            newFileName = newFileName.replace("_", "",1)
         try:
             shutil.move(os.path.join(self.workingDirectory, filename), os.path.join(self.workingDirectory, newFileName + ext))
         except OSError as error:
