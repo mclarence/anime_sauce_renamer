@@ -38,6 +38,7 @@ Thumbs.db
 
 config.json
 .idea
+.idea/*
 venv
 venv/*
-__pycache__
+*__pycache__*
