@@ -1,8 +1,8 @@
 import json
-from sauce import Sauce
+from Services.SauceNaoService import SauceNaoService
+from Services.IqdbService import IqdbService
 from file_renamer import File_Renamer
 from saucenao import exceptions
-import sys
 import os
 import logging
 import argparse
@@ -10,10 +10,13 @@ import ntpath
 
 parser = argparse.ArgumentParser()
 parser.add_argument("fileOrDirectory", help="The file or directory to rename image(s).", type=str)
+parser.add_argument("service", help="The service to lookup the image. 'saucenao', 'iqdb' or 'auto' is accepted.",
+                    type=str)
 parser.add_argument("--verbose", help="Increase output verbosity.", action="store_true")
 args = parser.parse_args()
 
-logging.basicConfig(format='%(asctime)s [%(levelname)8s] - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s [%(levelname)8s] - %(message)s', datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.INFO)
 logging.info("Loading configuration.")
 with open('config.json') as json_file:
     try:
@@ -43,8 +46,9 @@ with open('config.json') as json_file:
             exit(1)
 
     loglevel = data['loglevel']
-    if loglevel not in [ "INFO", "DEBUG", "ERROR", "WARNING", "CRITICAL"]:
-        logging.error("Invalid log level specified! Must be either INFO, DEBUG, ERROR, WARNING or CRITICAL. Defaulting to INFO")
+    if loglevel not in ["INFO", "DEBUG", "ERROR", "WARNING", "CRITICAL"]:
+        logging.error(
+            "Invalid log level specified! Must be either INFO, DEBUG, ERROR, WARNING or CRITICAL. Defaulting to INFO")
         loglevel = logging.INFO
     else:
         if args.verbose:
@@ -70,12 +74,19 @@ with open('config.json') as json_file:
 logging.info("Configuration loaded.")
 logging.info("Starting! ε=ε=ε=ε=┌(;￣▽￣)┘")
 
-
 fileOrDirectory = args.fileOrDirectory
 
 if os.path.exists(fileOrDirectory):
     if os.path.isdir(fileOrDirectory):
-        thesauce = Sauce(fileOrDirectory, apiKey, similarity)
+        if args.service == "saucenao":
+            searchService = SauceNaoService(fileOrDirectory, apiKey, similarity)
+        elif args.service == "iqdb":
+            searchService = IqdbService(fileOrDirectory)
+        elif args.service == "auto":
+            searchService = SauceNaoService(fileOrDirectory, apiKey, similarity)
+        else:
+            searchService = SauceNaoService(fileOrDirectory, apiKey, similarity)
+
         renamer = File_Renamer(fileOrDirectory)
         filesToRename = os.listdir(fileOrDirectory)
         if len(filesToRename) > 199:
@@ -101,7 +112,13 @@ if os.path.exists(fileOrDirectory):
                 if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
                     while True:
                         try:
-                            sauceData = thesauce.getSauce(filename)
+                            sauceData = searchService.getSauce(filename)
+                            if sauceData.resultsFound == False and args.service == 'auto':
+                                logging.warning("No results returned from SauceNao for file " + filename)
+                                logging.warning("'auto' specified, using iqdb")
+                                sauceData = IqdbService(fileOrDirectory).getSauce(filename)
+                                if sauceData.resultsFound == False:
+                                    logging.warning("No results returned from both services for file " + filename)
                             renamer.rename(sauceData, filename)
                         except exceptions.DailyLimitReachedException as error:
                             logging.error(error)
@@ -109,18 +126,36 @@ if os.path.exists(fileOrDirectory):
                             exit(1)
                         except OSError as error:
                             logging.critical("A critical error has occurred and the application cannot continue! (-_-)")
+                            exit(1)
+                        except Exception as error:
+                            logging.error(error)
+                            logging.critical("A critical error has occurred and the application cannot continue! (-_-)")
+                            exit(1)
                         else:
                             break
     if os.path.isfile(fileOrDirectory):
         filename = ntpath.basename(fileOrDirectory)
         filepath = os.path.dirname(os.path.abspath(fileOrDirectory))
-        thesauce = Sauce(filepath, apiKey, similarity)
+        if args.service == "saucenao":
+            searchService = SauceNaoService(filepath, apiKey, similarity)
+        elif args.service == "iqdb":
+            searchService = IqdbService(filepath)
+        elif args.service == "auto":
+            searchService = SauceNaoService(filepath, apiKey, similarity)
+        else:
+            searchService = SauceNaoService(filepath, apiKey, similarity)
         renamer = File_Renamer(filepath)
         logging.info("I will now be checking and renaming " + filename + " :)")
         if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
             while True:
                 try:
-                    sauceData = thesauce.getSauce(filename)
+                    sauceData = searchService.getSauce(filename)
+                    if sauceData.resultsFound == False and args.service == 'auto':
+                        logging.warning("No results returned from SauceNao for file " + filename)
+                        logging.warning("'auto' specified, using iqdb")
+                        sauceData = IqdbService(filepath).getSauce(filename)
+                        if sauceData.resultsFound == False:
+                            logging.warning("No results returned from both services for file " + filename)
                     renamer.rename(sauceData, filename)
                 except exceptions.DailyLimitReachedException as error:
                     logging.error(error)
@@ -128,6 +163,11 @@ if os.path.exists(fileOrDirectory):
                     exit(1)
                 except OSError as error:
                     logging.critical("A critical error has occurred and the application cannot continue! (-_-)")
+                    exit(1)
+                except Exception as error:
+                    logging.error(error)
+                    logging.critical("A critical error has occurred and the application cannot continue! (-_-)")
+                    exit(1)
                 else:
                     break
 

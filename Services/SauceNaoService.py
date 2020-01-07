@@ -1,32 +1,31 @@
 from saucenao import SauceNao
 from saucenao import exceptions
-from proxybroker import errors
-from resultData import ResultData
+from Models.Results import Results
+from Services.ServicesEnum import ServicesEnum as Service
 import time
 import logging
-class Sauce:
+class SauceNaoService:
     def __init__(self, workingDirectory, apiKey, similarity):
         self.workingDirectory = workingDirectory
         self.apiKey = apiKey
         self.logger = logging.getLogger(__name__)
         self.saucenao = SauceNao(directory=workingDirectory, output_type=SauceNao.API_JSON_TYPE,
-                        api_key=apiKey, minimum_similarity=similarity)
+                                        api_key=apiKey, minimum_similarity=similarity)
         self.startTime = 0
         self.requestCount = 0
         self.similarity = similarity
 
-    def getSauce(self, filename: str) -> ResultData:
-        self.isRequestLimitReached()
-        sauceResult = ResultData(False)
+    def getSauce(self, filename: str) -> Results:
+        self.__isRequestLimitReached()
+        sauceResult = Results(Service.SAUCENAO, False)
         while True:
             try:
                 self.startTime = time.time()
                 self.requestCount += 1
                 searchResults = self.saucenao.check_file(filename)
                 if not searchResults:
-                    self.logger.warning("No results returned for file " + filename)
                     sauceResult.resultsFound = False
-                    self.isRequestLimitReached()
+                    self.__isRequestLimitReached()
                     return sauceResult
                 else:
                     break
@@ -64,10 +63,11 @@ class Sauce:
                 if 'yandere_id' in resultData:
                     sauceResult.yandere_id = result['data']['yandere_id']
         self.logger.info("Results found for " + filename)
+        sauceResult.service = Service.SAUCENAO
         sauceResult.resultsFound = True
         return sauceResult
 
-    def isRequestLimitReached(self):
+    def __isRequestLimitReached(self):
         end_time = time.time()
         elapsedTime = end_time - self.startTime
         if self.requestCount >= 5:

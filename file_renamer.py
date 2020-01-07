@@ -1,4 +1,4 @@
-from resultData import ResultData
+from Models.Results import Results
 import shutil
 import os
 from slugify import slugify
@@ -8,7 +8,7 @@ class File_Renamer:
         self.workingDirectory = workingDirectory
         self.logger = logging.getLogger(__name__)
 
-    def rename(self, sauceData: ResultData, filename: str):
+    def rename(self, sauceData: Results, filename: str):
         fn_strings = []
         for attr, value in sauceData.__dict__.items():
             if value is not None or not "":
@@ -19,8 +19,12 @@ class File_Renamer:
                     else:
                         continue
                 elif attr == 'material':
+                    if value is None or value is "":
+                        continue
                     fn_strings.append(value[0])
                 elif attr == 'characters':
+                    if value is None or value is "":
+                        continue
                     if fn_strings[0] is not None:
                         if fn_strings[0] in value or fn_strings[0] is not "":
                             del fn_strings[0]
@@ -88,12 +92,51 @@ class File_Renamer:
                     fn_strings.append("yandere")
                     fn_strings.append(str(value))
                     break
+                elif attr == 'sankakucomplex_id':
+                    if value is None or value is "":
+                        continue
+                    fn_strings.append("sankakucomplex")
+                    fn_strings.append(str(value))
+                    break
+                elif attr == 'anime_pictures_id':
+                    if value is None or value is "":
+                        continue
+                    fn_strings.append("anime_pictures")
+                    fn_strings.append(str(value))
+                    break
+                elif attr == 'e_shuushuu_id':
+                    if value is None or value is "":
+                        continue
+                    fn_strings.append("e_shuushuu")
+                    fn_strings.append(str(value))
+                    break
+                elif attr == 'zerochan_id':
+                    if value is None or value is "":
+                        continue
+                    fn_strings.append("zerochan")
+                    fn_strings.append(str(value))
+                    break
+                elif attr == 'konachan_id':
+                    if value is None or value is "":
+                        continue
+                    fn_strings.append("konachan")
+                    fn_strings.append(str(value))
+                    break
+                elif attr == 'yandere_id':
+                    if value is None or value is "":
+                        continue
+                    fn_strings.append("yandere")
+                    fn_strings.append(str(value))
+                    break
 
         if filename.endswith(".jpg"):
             ext = ".jpg"
         else:
             ext = ".png"
         newFileName = slugify("_".join(fn_strings))
+
+        if newFileName is None or newFileName is "":
+            newFileName = "unknown"
 
         if os.path.isfile(os.path.join(self.workingDirectory, newFileName + ext)):
             count = 1

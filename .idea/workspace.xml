@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3cbea1d-331f-4a21-81b2-e85e73dea577" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/saucenao.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Results.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/IqdbService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/ServicesEnum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file_renamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_renamer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sauce.py" beforeDir="false" afterPath="$PROJECT_DIR$/sauce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultData.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sauce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SauceNaoService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1VxJngbIYKIQyEC0f2oxCsBTpNN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -41,14 +42,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.3329939" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Models" />
+      <recent name="$PROJECT_DIR$/Services" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -67,7 +70,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="--help" />
+      <option name="PARAMETERS" value="$USER_HOME$/Desktop/test/test.png auto" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -106,12 +109,26 @@
       <workItem from="1578222645022" duration="17022000" />
       <workItem from="1578275745059" duration="113000" />
       <workItem from="1578307819678" duration="338000" />
-      <workItem from="1578308190838" duration="6430000" />
+      <workItem from="1578308190838" duration="6629000" />
+      <workItem from="1578347159960" duration="7425000" />
+      <workItem from="1578355149566" duration="4404000" />
     </task>
+    <task id="LOCAL-00001" summary="- Fixed duplicate file bug.&#10;- JPEG files are now recognised.&#10;- Can now rename only single file.&#10;- Improved logging output.&#10;- Updated README.md&#10;- Added configuration error checking.&#10;- --verbosity command line argument added">
+      <created>1578315516394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578315516394</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Fixed duplicate file bug.&#10;- JPEG files are now recognised.&#10;- Can now rename only single file.&#10;- Improved logging output.&#10;- Updated README.md&#10;- Added configuration error checking.&#10;- --verbosity command line argument added" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Fixed duplicate file bug.&#10;- JPEG files are now recognised.&#10;- Can now rename only single file.&#10;- Improved logging output.&#10;- Updated README.md&#10;- Added configuration error checking.&#10;- --verbosity command line argument added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2085" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578271891473">
@@ -122,18 +139,30 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2187" y="263" key="#com.intellij.ide.macro.MacrosDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578264372790" />
+    <state x="2137" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578359014579">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2137" y="342" key="#com.intellij.ide.util.TreeClassChooserDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359014579" />
+    <state x="1985" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578356939940">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="1985" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578356939940" />
     <state x="2137" y="304" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578271637230">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2137" y="304" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578271637230" />
-    <state x="2116" y="176" key="#main" timestamp="1578315095237">
+    <state x="2116" y="176" key="#main" timestamp="1578359647402">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state x="2116" y="176" key="#main/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315095237" />
+    <state x="2116" y="176" key="#main/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359647402" />
     <state x="1765" y="311" key="#xdebugger.XInspectDialog" timestamp="1578189843216">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="1765" y="311" key="#xdebugger.XInspectDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578189843216" />
+    <state x="2009" y="67" key="CommitChangelistDialog2" timestamp="1578315516210">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2009" y="67" key="CommitChangelistDialog2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315516210" />
     <state width="838" height="466" key="DebuggerActiveHint" timestamp="1578196234655">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
@@ -142,42 +171,46 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2188" y="312" key="FileChooserDialogImpl/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578189045526" />
-    <state width="1878" height="337" key="GridCell.Tab.0.bottom" timestamp="1578315233589">
+    <state width="1878" height="371" key="GridCell.Tab.0.bottom" timestamp="1578359388901">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233589" />
-    <state width="1878" height="337" key="GridCell.Tab.0.center" timestamp="1578315233588">
+    <state width="1878" height="371" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388901" />
+    <state width="1878" height="371" key="GridCell.Tab.0.center" timestamp="1578359388900">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233588" />
-    <state width="1878" height="337" key="GridCell.Tab.0.left" timestamp="1578315233588">
+    <state width="1878" height="371" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388900" />
+    <state width="1878" height="371" key="GridCell.Tab.0.left" timestamp="1578359388899">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233588" />
-    <state width="1878" height="337" key="GridCell.Tab.0.right" timestamp="1578315233589">
+    <state width="1878" height="371" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388899" />
+    <state width="1878" height="371" key="GridCell.Tab.0.right" timestamp="1578359388901">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233589" />
-    <state width="1878" height="337" key="GridCell.Tab.1.bottom" timestamp="1578315233591">
+    <state width="1878" height="371" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388900" />
+    <state width="1878" height="371" key="GridCell.Tab.1.bottom" timestamp="1578359388904">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233591" />
-    <state width="1878" height="337" key="GridCell.Tab.1.center" timestamp="1578315233590">
+    <state width="1878" height="371" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388904" />
+    <state width="1878" height="371" key="GridCell.Tab.1.center" timestamp="1578359388902">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233590" />
-    <state width="1878" height="337" key="GridCell.Tab.1.left" timestamp="1578315233590">
+    <state width="1878" height="371" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388902" />
+    <state width="1878" height="371" key="GridCell.Tab.1.left" timestamp="1578359388902">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233590" />
-    <state width="1878" height="337" key="GridCell.Tab.1.right" timestamp="1578315233590">
+    <state width="1878" height="371" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388902" />
+    <state width="1878" height="371" key="GridCell.Tab.1.right" timestamp="1578359388903">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state width="1878" height="337" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315233590" />
-    <state x="2187" y="109" key="SettingsEditor" timestamp="1578308727426">
+    <state width="1878" height="371" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359388903" />
+    <state x="2187" y="109" key="SettingsEditor" timestamp="1578350153274">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state x="2187" y="109" key="SettingsEditor/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578308727426" />
+    <state x="2187" y="109" key="SettingsEditor/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578350153274" />
+    <state x="2000" y="287" key="Vcs.Push.Dialog.v2" timestamp="1578315520141">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2000" y="287" key="Vcs.Push.Dialog.v2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578315520141" />
     <state width="960" height="528" key="XDebugger.FullValuePopup" timestamp="1578272911318">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
@@ -186,31 +219,36 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="397" y="294" key="com.intellij.ide.util.TipDialog/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578216451982" />
-    <state x="2063" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1578226520703">
+    <state x="1955" y="212" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578359059267">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
-    <state x="2063" y="256" width="672" height="678" key="search.everywhere.popup/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578226520703" />
+    <state x="1955" y="212" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578359059267" />
+    <state x="2063" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1578350792934">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2063" y="256" width="672" height="678" key="search.everywhere.popup/1440.23.1920.1057/0.23.1440.877@1440.23.1920.1057" timestamp="1578350792934" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/file_renamer.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="python-exception">
+          <properties notifyOnlyOnFirst="true" notifyOnTerminate="true" ignoreLibraries="true" exception="BaseException">
+            <option name="ignoreLibraries" value="true" />
+            <option name="notifyOnTerminate" value="true" />
+            <option name="notifyOnlyOnFirst" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="os.path.join(self.workingDirectory, newFileName + ext)" language="Python" />
-        <watch expression="os.path.isfile(os.path.join(self.workingDirectory, newFileName + ext))" language="Python" />
+        <watch expression="re.findall(r&quot;(?&lt;=id=).*&quot;, img_src_string)" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/saucenao$main.coverage" NAME="main Coverage Results" MODIFIED="1578275829113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/saucenao$file_renamer.coverage" NAME="file_renamer Coverage Results" MODIFIED="1578227829123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sauce_renamer$main.coverage" NAME="main Coverage Results" MODIFIED="1578315095248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sauce_renamer$main.coverage" NAME="main Coverage Results" MODIFIED="1578359306514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
